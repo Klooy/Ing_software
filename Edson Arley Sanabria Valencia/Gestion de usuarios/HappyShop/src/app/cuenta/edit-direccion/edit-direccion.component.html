@@ -1,0 +1,32 @@
+<form class="row" [formGroup]="direcForm">
+    <div class="col-md-6">
+        <label>Pais</label>
+        <select class="form-control" formControlName="pais">
+            <option value="">Seleccione</option>
+            <option *ngFor="let paiss of pais" value="{{paiss.idPais}}">{{paiss.nombrePais}}</option>
+        </select>
+    </div>
+
+    <div class="col-md-6">
+        <label>Departamento</label>
+        <select class="form-control" formControlName="ciudad">
+            <option value="">Seleccione</option>
+            <option *ngFor="let ciudadd of ciudad" value="{{ciudadd.idCiudad}}">{{ciudadd.nombreCiudad}}</option>
+        </select>
+    </div>
+
+    <div class="col-md-6">
+        <label>Dirección</label>
+        <input type="text" class="form-control" value="{{datosPersona.direccion}}" formControlName="direccion">
+    </div>
+</form>
+
+<div class="row">
+    <div class="col-md-6">
+        <button class="btn" [disabled]="direcForm.pristine" (click)="validar()">Guardar</button>
+    </div>
+    <div class="col-md-6">
+        <button class="btn" (click)="cerrar()" >Cerrar</button>
+    </div>
+</div>
+

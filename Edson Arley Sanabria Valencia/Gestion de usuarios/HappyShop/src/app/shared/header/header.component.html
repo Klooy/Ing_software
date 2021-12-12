@@ -1,0 +1,82 @@
+<!-- Top bar Start -->
+<div class="top-bar">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <i class="fa fa-envelope"></i>
+                <a target="_black" href="mailTo:{{_infoPagina.info.email}}">{{_infoPagina.info.email}}</a>
+            </div>
+            <div class="col-sm-6">
+                <input type="submit" class="btn3" value="ADMI"  routerLink="admin" routerLinkActive="active" [disabled]="activarMiCuenta.activarAdmi"> 
+                <i class="fa fa-phone-alt"></i>
+                {{_infoPagina.info.numero}}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Top bar End -->
+
+<!-- Nav Bar Start -->
+<div class="nav">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <a href="#" class="navbar-brand">MENU</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav mr-auto">
+                    <a routerLink="inicio" class="nav-item nav-link" routerLinkActive="active">Inicio</a>
+                    <a routerLink="productos" class="nav-item nav-link" routerLinkActive="active">Productos</a>                  
+                    <!--<a routerLink="cuenta" class="nav-item nav-link" routerLinkActive="active">Mi cuenta</a> --> 
+                    <button routerLink="cuenta" class="btn2" routerLinkActive="active" [disabled]="activarMiCuenta.activar">MI CUENTA</button>
+                    
+                    
+                                
+                </div>
+                <div class="navbar-nav ml-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cuenta de usuario</a>
+                        <div class="dropdown-menu">
+                            <a routerLink="login" class="dropdown-item">Ingresar</a>
+                            <a routerLink="registro" class="dropdown-item">Registrarse</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- Nav Bar End -->      
+
+<!-- Bottom Bar Start -->
+<div class="bottom-bar">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-3">
+                <div class="logo">
+                    <a routerLink="inicio">
+                        <img src="assets/img/logo.png" alt="Logo">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="search">
+                    <input type="text" placeholder="Buscar">
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="user">
+                    
+                    <button [disabled]="activarMiCuenta.activar"  class="btn cart">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span>(0)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bottom Bar End -->
