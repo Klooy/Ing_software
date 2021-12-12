@@ -1,0 +1,70 @@
+<!-- Cart Start -->
+<div class="cart-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="cart-page-inner">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Fecha</th>
+                                    <th>Total</th>                                    
+                                    <th>Remover</th>
+                                </tr>
+                            </thead>
+                            <tbody class="align-middle" *ngFor="let carrito of datosCarrito">
+                                <tr> <!---->
+                                    <td>
+                                        <div >                                            
+                                            <p>{{carrito.nombreArticulo}}</p>
+                                        </div>
+                                    </td>
+                                    <td>$ {{carrito.precio}}</td>
+                                    <td>
+                                        <div class="qty">                                            
+                                            <input type="number" value="{{carrito.cantidad}}">                                            
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {{fechaCorta}}
+                                    </td>
+                                    <td>$ {{carrito.total}}</td>
+                                    
+                                    <td><button (click)="eliminar(carrito.id)"><i class="fa fa-trash"></i></button></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="cart-page-inner">
+                    <div class="row">
+                        
+                        <div class="col-md-12">
+                            <div class="cart-summary">
+                                <div class="cart-content">
+                                    <h1>Resumen de compra</h1>
+                                    <p>Sub Total<span>$ {{totalCom}}</span></p>
+                                    
+                                    <h2>Total<span>$ {{totalCom}}</span></h2>
+                                </div>
+                                <div class="cart-btn">
+                                    <button (click)="redireccionar()">Seguir comprando</button>
+                                    <button (click)="pagar()">Pagar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Cart End -->

@@ -1,0 +1,90 @@
+<!-- Login Start -->
+<div class="login">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">    
+                <div class="register-form">
+                    <div >
+                        <form class="row" [formGroup]="registrosForm">
+                            
+                            <div class="col-md-6">
+                                <label>Nombres*</label>
+                                <input class="form-control" type="text" name="nombres" placeholder="Nombres" formControlName="nombres" >
+                            </div>
+                            <div class="col-md-6">
+                                <label>Apellidos*</label>
+                                <input class="form-control" type="text" name="apellidos" placeholder="Apellidos" formControlName="apellidos" >
+                            </div>
+                            <div class="col-md-6">
+                                <label>Cedula*</label>
+                                <input class="form-control" type="text" name="cedula" placeholder="Cedula" formControlName="cedula" >
+                            </div>
+                            <div class="col-md-6">
+                                <label>Dirección*</label>
+                                <input class="form-control" type="text" name="direccion" placeholder="Direcciones" formControlName="direccion" >
+                            </div>
+                            <div class="col-md-6">
+                                <label>Teléfono</label>
+                                <input class="form-control" type="text" name="telefono" placeholder="Teléfono" formControlName="telefono" >
+                            </div>
+                            <div class="col-md-6">
+                                <label>Fecha de nacimiento*</label>
+                                <input class="form-control" type="date" name="fechaNacimiento" formControlName="fechaNacimiento" [min]="fechaMinima" [max]="fechaMaxima"><!---->
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <label>Genero</label>                             
+                                <select class="form-control" type="text" name="genero" formControlName="genero">
+                                    <option value="">Seleccione</option>
+                                    <option value="Femenino">Femenino</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="No decir">No decir</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Departamento*</label>
+                                
+                                <div>
+                                    <select class="form-control" type="text" name="idCiudad" formControlName="idCiudad" >
+                                        
+                                        <option value="" >Seleccione</option>
+                                        <option *ngFor="let perso of ciuda" value="{{perso.idCiudad}}">{{perso.nombreCiudad}}</option>
+                                        
+                                    </select>
+                                </div>
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <label>Pais*</label>
+                                <select class="form-control" type="text" name="idPais" formControlName="idPais" >
+                                        
+                                    <option value="" >Seleccione</option>
+                                    <option *ngFor="let paiss of pais" value="{{paiss.idPais}}">{{paiss.nombrePais}}</option>
+                                    
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label>E-mail*</label>
+                                <input class="form-control" type="text" name="email" placeholder="E-mail" formControlName="email" >
+                            </div>
+                            <div class="col-md-6">
+                                <label>Contraseña*</label>
+                                <input class="form-control" type="password" placeholder="Contraseña" formControlName="contrasena">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Repetir Contraseña*</label>
+                                <input class="form-control" type="password" name="contrasena" placeholder="Repetir Contraseña" formControlName="repetirContrasena" >
+                            </div>
+                            <div class="col-md-12">
+                                <button class="btn" type="submit" [disabled]="registrosForm.invalid" (click)="validar()">Registrarse</button> <!--(click)="validar()"-->
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Login End -->
