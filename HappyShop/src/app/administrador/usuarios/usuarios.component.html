@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="bottom-bar">
+        <div class="col-md-6">
+            <form class="search" [formGroup]="buscarForm">
+                <input type="text" placeholder="Buscar por email" formControlName="email">
+                <button [disabled]="buscarForm.invalid || buscarForm.pristine" (click)="buscar()"><i class="fa fa-search"></i></button>
+                
+            </form>   
+            <div class="pt-2">
+                <button class="btn btn-primary" (click)="mostrarTodos()">Todo</button>
+            </div>         
+        </div>
+        
+    </div>
+    
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>No</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Cedula</th>
+                    <th>Dirección</th>
+                    <th>Telefono</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Email</th>
+                    <th>Genero</th>
+                    <th>ID Ciudad</th>
+                    <th>ID Pais</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let usuarios of datosPersona">
+                <tr>
+                    <td>{{usuarios.idPersona}}</td>
+                    <td>{{usuarios.nombres}}</td>
+                    <td>{{usuarios.apellidos}}</td>
+                    <td>{{usuarios.cedula}}</td>
+                    <td>{{usuarios.direccion}}</td>
+                    <td>{{usuarios.telefono}}</td>
+                    <td>{{usuarios.fechaNacimiento}}</td>
+                    <td>{{usuarios.email}}</td>
+                    <td>{{usuarios.genero}}</td>
+                    <td>{{usuarios.idCiudad}}</td>
+                    <td>{{usuarios.idPais}}</td>
+                </tr>
+                
+                
+            </tbody>
+        </table>
+    </div>
+</div>

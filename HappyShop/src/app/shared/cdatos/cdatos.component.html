@@ -1,0 +1,88 @@
+<div class="my-account">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">    
+               
+                   
+                     
+                            <div class="col-md-4">
+                                <label>Nombre Completo: {{datosPersona.nombres}} {{datosPersona.apellidos}}</label>
+                            </div>
+                        
+                            <div class="col-md-4">
+                                <label>Cedula: {{datosPersona.cedula}} </label>
+                            </div>
+                           
+                            <div class="col-md-4">
+                                <label>Correo: {{datosPersona.email}}</label>                                
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Telefono: {{datosPersona.telefono}}</label>                               
+                            </div>
+                            <form [formGroup]="direcForm">
+                                <div class="col-md-4">
+                                    <label>Direccion</label>
+                                    <input class="form-control" type="text"  cols="30" rows="10" value="{{cliente.direccionFacturacion}}" formControlName="direccion">
+                                    
+                                </div>
+                            
+                                <div class="col-md-4" > 
+                                    <label>Metodos de entrega</label>
+                                    <select class="form-control" type= "text" formControlName="metodoEntrega">
+                                        <option value="seleccione">Seleccione</option>
+                                        <option value="Normal" (click)="normal()">Normal</option>
+                                        <option value="prioritario" (click)="prioritario()">Prioritario</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4" > 
+                                    <label>Metodos de pago</label>
+                                    <select class="form-control" type= "text" formControlName="metodoPago">
+                                        <option value="seleccione">Seleccione</option>
+                                        <option  value="Paypal">Paypal</option>
+                                        <option  value="Payu">Payu</option>
+                                    
+                                    </select>
+                                </div>
+                                <div class="col-md-4" > 
+                                    <label>Empresa de transporte</label>
+                                    <select class="form-control" type= "text" formControlName="empresaTranspor">
+                                        <option value="seleccione">Seleccione</option>
+                                        <option *ngFor="let empresa of empresas" value="{{empresa.idEmpresaTranspor}}" >{{empresa.nombre}}</option>
+                                    
+                                    </select>
+                                </div>
+                            
+                            
+                                <br>
+                                <div>
+                                    <button class="btn" (click)="validacion()">Realizar pedido</button>
+                                </div>
+                            </form>
+            </div>
+            <div class="col-lg-3">
+                <div class="tad-content">
+                    <div class="table-response">
+                        <table class="table table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let carrito of datosCarrito">
+                                <tr>
+                                    <td>{{carrito.nombreArticulo}}</td>
+                                    <td>${{carrito.precio}}</td>
+                                </tr>
+                            </tbody>
+                        </table>                    
+                    </div>
+                    <div>
+                        <p>Total: {{totalN}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
