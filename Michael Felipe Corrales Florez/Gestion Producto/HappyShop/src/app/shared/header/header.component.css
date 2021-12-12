@@ -1,0 +1,27 @@
+.btn2 {
+    color: #ffffff;
+    background: #7FAD39;
+    border: none;
+}
+
+.btn2:hover,
+.btn2:active,
+.btn2:focus {
+    color: #000000;
+    background: #7FAD39;
+    box-shadow: none;
+}
+
+.btn3 {
+    color: #555555;
+    background: #000000;
+    border: none;
+}
+
+.btn3:hover,
+.btn3:active,
+.btn3:focus {
+    color: #000000;
+    background: #383838;
+    box-shadow: none;
+}

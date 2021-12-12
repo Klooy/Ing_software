@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 ========= VIDEO INDIVIDUAL FUNCIONALIDAD GESTION DE PRODUCTOS
 
 ---------- MICHAEL FELIPE CORRALES FLOREZ
 
+=======
+========= VIDEO INDIVIDUAL FUNCIONALIDAD GESTION DE PRODUCTOS
+
+---------- MICHAEL FELIPE CORRALES FLOREZ
+
+>>>>>>> 0e123c9818b9ca6bbf300a98a2a6ba550b4114db
 ---------- https://drive.google.com/file/d/1NnwjOwtou1cHJr63-3cjBwnddWAUhh1X/view?usp=sharing

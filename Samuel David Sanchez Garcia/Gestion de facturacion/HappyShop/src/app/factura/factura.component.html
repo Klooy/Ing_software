@@ -1,0 +1,56 @@
+<div class="container bg-light">
+    <div class="row">
+        <div class="col-md-9">
+            <h1>Factura HappyShop</h1>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>ID pedido: {{datosDetallePedido.idPedido}}</label>
+                </div>
+    
+                <div class="col-md-4">
+                    <label>Metodo de pago: {{datosDetallePedido.metodoPago}}</label>
+                </div>
+    
+                <div class="col-md-4">
+                    <label>Metodo de entrega: {{datosDetallePedido.metodoEntrega}}</label>
+                </div>
+
+                <div class="col-md-4">
+                    <label>Empresa transporte: {{datosEmpresaTransporte.nombre}}</label>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <div class="container">
+                <div class="row">
+                    <div class="table-response">
+                        <table class="table table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>ID Articulo</th>
+                                    <th>Nombre Articulo</th>
+                                    <th>Descripción</th>
+                                    <th>Precio</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let producto of datosArtiArray">
+                                <tr>
+                                    <td>{{producto.idArticulo}}</td>
+                                    <td>{{producto.nombreArticulo}}</td>
+                                    <td>{{producto.descripcion}}</td>
+                                    <td>{{producto.precio}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <button class="btn" routerLink="Inicio">Inicio</button>
+            </div>
+        </div>
+    </div>
+</div>
